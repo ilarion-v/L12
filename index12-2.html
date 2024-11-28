@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    </head>
+<body>
+    <div class="button-container" id="buttonContainer">
+        <button>Кнопка 1</button>
+        <button>Кнопка 2</button>
+        <button>Кнопка 3</button>
+    </div>
+
+    <script>
+        document.getElementById('buttonContainer').addEventListener('click', function(event) {
+            if (event.target.tagName === 'BUTTON') {
+                alert('Ви натиснули' + event.target.textContent);
+            }
+        });
+    </script>
+</body>
+</html>
