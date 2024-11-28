@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Список Завдань</h2>
+        <ul id="taskList"></ul>
+        <input type="text" id="newTask" placeholder="Додати нове завдання">
+        <button onclick="addTask()">Додати</button>
+        
+    </div>
+
+    <script>
+        document.getElementById('taskList').addEventListener('click', function(event) {
+            if (event.target.tagName === 'BUTTON') {
+                event.target.parentElement.remove();
+            }
+        });
+
+        function addTask() {
+            const taskInput = document.getElementById('newTask');
+            const taskText = taskInput.value.trim();
+            if (taskText !== '') {
+                const newTask = document.createElement('li');
+                newTask.innerHTML = `${taskText} <button>Видалити</button>`;
+                document.getElementById('taskList').appendChild(newTask);
+                taskInput.value = '';
+            }
+        }
+    </script>
+</body>
+</html>
